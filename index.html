@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/styles.css" class="ref" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/c238dbe3af.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row-first">
+      <div class="col-4">
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap"
+              rel="stylesheet" />
+          </div>
+          <input type="text" id="cityEntered" placeholder="Search for City..." autocomplete="off" />
+      </div>
+      <div class="col-4" id="go">
+        <button type="submit" class="btn btn-outline-dark btn-sm">
+          Go
+        </button>
+        </form>
+      </div>
+      <div class="col-4" id="currentLocation">
+        <button type="button" class="btn btn-light">
+          Current Location
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1>Manila</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6" id="left">
+        <div class="sun">
+          <p>
+            <i class="fas fa-sun"></i>
+          </p>
+        </div>
+        <h2>
+          <span id="mainTemp">32</span><span id=degrees><a href="#" id="celsius">°C</a>|<a href="#"
+              id="farenheit">°F</a></span>
+        </h2>
+        <h2 class="sunny">Sunny</h2>
+      </div>
+      <div class="col-6 right-column">
+        <h3>Tuesday 16:00</h3>
+        <br />
+        <p class="right">
+          <strong class="side">UV Index</strong> 12 Extreme
+          <br />
+          <strong class="side">Humidity</strong> 59%
+          <br />
+          <strong class="side">Wind</strong> 6 km/h NE
+          <br />
+          <strong class="side">Sunrise</strong> 5:42AM
+          <br />
+          <strong class="side">Sunset</strong> 6:16PM
+        </p>
+      </div>
+    </div>
+    <div class="row forecast">
+      <div class="col-12">
+        <h4>
+          <strong>5-Day Forecast</strong>
+        </h4>
+      </div>
+      <div class="col">
+        <strong>Mon</strong>
+        <br />
+        <i class="fas fa-cloud-sun-rain"></i>
+        <p class="temps"><strong>24°C</strong><br /> 14°C</p>
+      </div>
+      <div class="col">
+        <strong>Tue</strong>
+        <br />
+        <i class="fas fa-sun"></i>
+        <p class="temps"><strong>30°C</strong><br /> 15°C</p>
+      </div>
+      <div class="col">
+        <strong>Wed</strong>
+        <br />
+        <i class="fas fa-cloud-showers-heavy"></i>
+        <p class="temps"><strong>20°C</strong><br /> 11°C</p>
+      </div>
+      <div class="col">
+        <strong>Thu</strong>
+        <br />
+        <i class="fas fa-cloud"></i>
+        <p class="temps"><strong>22°C</strong><br /> 10°C</p>
+      </div>
+      <div class="col">
+        <strong>Fri</strong>
+        <br />
+        <i class="fas fa-cloud-sun"></i>
+        <p class="temps"><strong>27°C</strong><br /> 12°C</p>
+      </div>
+    </div>
+  </div>
+  <script src="src/script.js"></script>
+</body>
+
+</html>
