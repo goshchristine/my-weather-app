@@ -139,11 +139,12 @@ h2 {
   bottom: 22px;
 }
 
-.sunny {
+.description {
   font-size: 18px;
   font-weight: 400;
   margin-top: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 .right-column {

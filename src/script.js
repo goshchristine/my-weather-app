@@ -26,10 +26,19 @@ let months = [
   "November",
   "December",
 ];
+
 let month = months[now.getMonth()];
 let date = now.getDate();
 let hour = now.getHours();
 let minutes = now.getMinutes();
+
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 h3.innerHTML = `${day}, ${month} ${date} ${hour}:${minutes}`;
 
