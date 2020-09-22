@@ -34,7 +34,7 @@ body {
 
 #currentLocation {
   position: relative;
-  right: 30px;
+  left: -5px;
   top: 2.8px;
 }
 
