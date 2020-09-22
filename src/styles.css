@@ -122,9 +122,15 @@ h1 {
   margin-bottom: 0;
 }
 
+.fa-sun {
+  margin-bottom: 0px;
+  padding: 0;
+}
+
 h2 {
   font-size: 45px;
   font-weight: lighter;
+  margin-bottom: 0;
 }
 
 #degrees {
@@ -136,7 +142,7 @@ h2 {
 .sunny {
   font-size: 18px;
   font-weight: 400;
-  margin: 0 auto;
+  margin-top: 0;
   padding: 0;
 }
 
@@ -152,6 +158,7 @@ h3 {
   text-decoration: bold;
   position: relative;
   right: 41px;
+  top: 10px;
 }
 
 .right {
