@@ -193,11 +193,14 @@ a:visited {
   color: black;
 }
 
-.image {
+.mainIcon {
   margin: 0 auto;
   padding: 0;
   max-width: 300px;
   max-height: 300px;
+  position: relative;
+  left: 2px;
+  top: 15px;
 }
 
 .open-source-code {
