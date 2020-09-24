@@ -18,7 +18,7 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[now.getDay()];
-return `${day} ${month} ${date} <br/> ${formatHours(timestamp)}`;
+return `${day} <br/> ${month} ${date} <br/> ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {
@@ -59,13 +59,14 @@ console.log(response.data);
 
 function displayForecast(response) {
  let forecastElement = document.querySelector("#forecast");
+ forecastElement.innerHTML = null;
  let forecast = null;
-     
-for (let index = 0; index < 6; index++) {
+
+for (let index = 0; index < 5; index++) {
      forecast = response.data.list[index];
      forecastElement.innerHTML += ` 
      <div class="col-2">
-     <p><strong>${formatHours(forecast.dt * 1000)}</strong></p>
+     <p class="times"><strong>${formatHours(forecast.dt * 1000)}</strong></p>
      <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
      <p class="temps"><strong>${Math.round(forecast.main.temp_max)}°</strong><br /> ${Math.round(forecast.main.temp_min)}°</p></p>
    </div>`; 
@@ -82,7 +83,6 @@ axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
-     console.log(response.data.list[0]);
      event.preventDefault();
      let cityInputElement = document.querySelector("#cityEntered");
      search(cityInputElement.value);

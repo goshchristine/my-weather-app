@@ -2,11 +2,11 @@ body {
   background-color: rgba(250, 227, 227, 0.219);
   text-align: center;
   display: block;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 .container {
-  margin: 15px auto;
+  margin: 12px auto;
   margin-bottom: 0px;
   font-family: "Poppins", sans-serif;
   border: 2px groove transparent;
@@ -17,9 +17,11 @@ body {
     #ffb9b9 100%,
     #ffadad 100%
   );
-  padding: 10px;
+  padding: 0;
+  padding-top: 5px;
   box-shadow: 1px 1px 1px transparent;
   color:rgba(206, 35, 64, 0.61);
+  max-width: 475px;
 }
 
 .row-first {
@@ -34,65 +36,36 @@ body {
   top: 12px;
 }
 
-#currentLocation {
-  position: relative;
-  left: -5px;
-  top: 2.8px;
-}
-
 input {
   border: none;
   border-radius: 5px;
   border: 2px outset #fff;
   color: rgb(206, 35, 63);
   position: relative;
-  left: 20px;
+  left: 80px;
 }
 
 .btn-sm {
-  position: relative;
-  bottom: 5px;
-  right: 3px;
   padding: 3px 7px 3px 7px;
+  color: #fff;
   background-color: #fff;
   color: rgb(206, 35, 63);
   border: 2px outset #fff;
+  position: relative;
+  right: 41px;
+  bottom: 5px;
 }
 
 .btn-sm:hover {
-  color: #fff;
   background-color: rgb(206, 35, 63);
+  border: 1px outset rgb(206, 35, 63);
   transition: all 200ms ease-in-out;
-  border: 1px solid rgb(206, 35, 63);
+  border: 2px outset #fff;
 }
 
 .btn-sm:active {
   color: #fff;
   background-color: rgb(206, 35, 63);
-  border: 2px outset (206, 35, 63);
-}
-
-.btn-light {
-  color: rgb(206, 35, 63);
-  font-size: 13.5px;
-  padding: 4.5px;
-  border-radius: 5px;
-  margin-top: 4px;
-  border: 2px outset #fff;
-  background-color: #fff;
-}
-
-.btn-light:hover {
-  color: #fff;
-  background-color: rgb(206, 35, 63);
-  transition: all 200ms ease-in-out;
-  border: none;
-  border: 2px outset (206, 35, 63);
-}
-
-.btn-light:active {
-  color: rgb(206, 35, 63);
-  background-color: #fff;
   border: 2px outset (206, 35, 63);
 }
 
@@ -117,21 +90,17 @@ h1 {
   left: 15px;
 }
 
-#icon {
-  margin: 0 auto;
-  padding: 0;
-}
 
 h2 {
-  font-size: 45px;
+  font-size: 95px;
   font-weight: lighter;
   margin-bottom: 0;
 }
 
 #degrees {
-  font-size: 14px;
+  font-size: 15px;
   position: relative;
-  bottom: 22px;
+  bottom: 57px;
 }
 
 #description {
@@ -149,7 +118,7 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   text-decoration: bold;
   position: relative;
@@ -163,7 +132,7 @@ h3 {
   text-align: left;
   font-style: italic;
   position: relative;
-  bottom: 10px;
+  left: 20px;
 }
 
 .side {
@@ -174,20 +143,29 @@ h3 {
 
 h4 {
   font-size: 22px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.temps {
-  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #forecast {
   margin: 0 auto;
   padding: 0;
+  text-align: center;
+  position: relative;
+  left: 50px;
 }
 
-p {
+img {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  right: 25px;
+}
+
+.times, .temps {
+  font-size: 17px;
   margin: 0 auto;
   padding: 0;
 }
@@ -206,13 +184,6 @@ a:visited {
   font-weight: 900;
 }
 
-.open-source-code {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  font-size: 12px;
-}
-
 .active {
   color:black;
   cursor: default;
@@ -220,4 +191,18 @@ a:visited {
 
 .active:hover {
   color: black;
+}
+
+.image {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.open-source-code {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 12px;
 }

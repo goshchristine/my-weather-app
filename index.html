@@ -16,7 +16,7 @@
 <body>
   <div class="container">
     <div class="row-first">
-      <div class="col-4">
+      <div class="col-6">
         <form class="form-inline" id="search-form">
           <div class="form-group mx-sm-3 mb-2">
             <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap"
@@ -24,7 +24,7 @@
           </div>
           <input type="text" placeholder="Search for City..." autocomplete="off" id="cityEntered" />
       </div>
-      <div class="col-4" id="go">
+      <div class="col-6" id="go">
         <button type="submit" class="btn btn-outline-dark btn-sm">
           Go
         </button>
@@ -39,7 +39,7 @@
     <div class="row">
       <div class="col-6" id="left">
         <div class="image">
-          <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="weather image" id="icon" />
+          <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="weather image" class="mainIcon" id="icon" />
         </div>
         <h2>
           <span id="mainTemp">32</span><span id=degrees><a href="#" id="celsius" class="active">°C</a>|<a href="#"
@@ -65,7 +65,7 @@
     <div class="row forecast">
       <div class="col-12">
         <h4>
-          <strong>5-Day Forecast</strong>
+          <strong>Hourly Forecast</strong>
         </h4>
       </div>
       <div class="row" id="forecast">
