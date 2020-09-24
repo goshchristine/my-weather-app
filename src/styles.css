@@ -115,15 +115,8 @@ h1 {
   left: 15px;
 }
 
-.sun i {
-  font-size: 100px;
-  margin-top: 15px;
-  padding: 0;
-  margin-bottom: 0;
-}
-
-.fa-sun {
-  margin-bottom: 0px;
+#icon {
+  margin: 0 auto;
   padding: 0;
 }
 
