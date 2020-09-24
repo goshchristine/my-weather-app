@@ -22,6 +22,8 @@ let dateElement = document.querySelector("h3");
 let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 
+celsiusTemperature = Math.round(response.data.main.temp);
+
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
 cityElement.innerHTML = response.data.name;
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -44,7 +46,33 @@ function handleSubmit(event) {
      search(cityInputElement.value);
 }
 
-search("Manila");
+function displayFahrenheitTemperature(event) {
+     event.preventDefault();
+     let farhenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+     celsiusLink.classList.remove("active");
+     fahrenheitLink.classList.add("active");
+     let temperatureElement = document.querySelector("#mainTemp");
+     temperatureElement.innerHTML = Math.round(farhenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+     event.preventDefault();
+     let temperatureElement = document.querySelector("#mainTemp");
+     temperatureElement.innerHTML = celsiusTemperature;
+     fahrenheitLink.classList.remove("active");
+     celsiusLink.classList.add("active");
+}
+
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Prague");

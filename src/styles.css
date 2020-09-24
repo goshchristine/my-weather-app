@@ -194,15 +194,13 @@ a {
   cursor: pointer;
 }
 
-a:visited {
-  color: rgba(206, 35, 64, 0.555);
-  font-weight: 800;
+a:hover {
+  color: rgb(206, 35, 63);;
+  text-decoration-line: none;
 }
 
-a:hover {
-  color: rgb(206, 35, 63);
-  text-decoration-line: none;
-  font-weight: 800;
+a:visited {
+  font-weight: 900;
 }
 
 .open-source-code {
@@ -210,4 +208,13 @@ a:hover {
   margin: 0 auto;
   padding: 0;
   font-size: 12px;
+}
+
+.active {
+  color:black;
+  cursor: default;
+}
+
+.active:hover {
+  color: black;
 }
