@@ -32,8 +32,19 @@ humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
+function search(city) {
 let apiKey = "efa461f8eba76234d37349aa6790ea03";
-let city = "Lisbon";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+     event.preventDefault();
+     let cityInputElement = document.querySelector("#cityEntered");
+     search(cityInputElement.value);
+}
+
+search("Manila");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
