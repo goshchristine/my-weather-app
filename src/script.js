@@ -18,7 +18,7 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[now.getDay()];
-return `${day} <br/> ${month} ${date} <br/> ${formatHours(timestamp)}`;
+return `Last updated on: <br/> ${day}, ${month} ${date} <br/>@ ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {
@@ -40,7 +40,6 @@ let windElement = document.querySelector("#wind");
 let sunriseElement = document.querySelector("#sunrise");
 let sunsetElement = document.querySelector("#sunset");
 
-
 celsiusTemperature = Math.round(response.data.main.temp);
 
 temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -57,20 +56,35 @@ sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);
 console.log(response.data);
 }
 
-function displayForecast(response) {
- let forecastElement = document.querySelector("#forecast");
- forecastElement.innerHTML = null;
- let forecast = null;
-
-for (let index = 0; index < 5; index++) {
-     forecast = response.data.list[index];
-     forecastElement.innerHTML += ` 
-     <div class="col-2">
-     <p class="times"><strong>${formatHours(forecast.dt * 1000)}</strong></p>
-     <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
-     <p class="temps"><strong>${Math.round(forecast.main.temp_max)}°</strong><br /> ${Math.round(forecast.main.temp_min)}°</p></p>
-   </div>`; 
+function formatDay(timestamp) {
+     let now = new Date(timestamp);
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = days[now.getDay()];
+return `${day}`
 }
+
+function displayForecast(response) {
+     console.log(response);
+     let forecastElement = document.querySelector("#forecast");
+     forecastElement.innerHTML = null;
+     let forecast = null;
+     for (let index = 0; index < 5; index++) {
+          forecast = response.data.list[index];
+          forecastElement.innerHTML += ` 
+          <div class="col-2">
+          <p class="times"><strong>${formatDay(forecast.dt * 1000)}</strong></p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+          <p class="temps"><strong>${Math.round(forecast.main.temp_max)}°</strong><br /> ${Math.round(forecast.main.temp_min)}°</p></p>
+        </div>`; 
+     }
+}
+
+function callForecast(response) {
+let latitude = position.coords.latitude;
+let longitude = position.coords.longitude;
+let apiKey = "efa461f8eba76234d37349aa6790ea03"
+let apiDailyUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
 }
 
 function search(city) {
@@ -79,7 +93,7 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemperature);
 
 apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayForecast);
+axios.get(apiUrl).then(callForecast);
 }
 
 function handleSubmit(event) {
