@@ -52,8 +52,6 @@ humidityElement.innerHTML = response.data.main.humidity;
 windElement.innerHTML = Math.round(response.data.wind.speed);
 sunriseElement.innerHTML = formatHours(response.data.sys.sunrise * 1000);
 sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);
-
-console.log(response.data);
 }
 
 function formatDay(timestamp) {
@@ -64,27 +62,27 @@ return `${day}`
 }
 
 function displayForecast(response) {
-     console.log(response);
      let forecastElement = document.querySelector("#forecast");
      forecastElement.innerHTML = null;
      let forecast = null;
      for (let index = 0; index < 5; index++) {
-          forecast = response.data.list[index];
+          forecast = response.data.daily[index];
+          console.log(forecast);
           forecastElement.innerHTML += ` 
           <div class="col-2">
           <p class="times"><strong>${formatDay(forecast.dt * 1000)}</strong></p>
-          <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
-          <p class="temps"><strong>${Math.round(forecast.main.temp_max)}°</strong><br /> ${Math.round(forecast.main.temp_min)}°</p></p>
+          <img src="http://openweathermap.org/img/wn/${forecast.weather.icon}@2x.png" />
+          <p class="temps"><strong>${Math.round(forecast.temp.max)}°</strong><br /> ${Math.round(forecast.temp.min)}°</p></p>
         </div>`; 
      }
 }
 
 function callForecast(response) {
-let latitude = position.coords.latitude;
-let longitude = position.coords.longitude;
+let latitude = response.data.city.coord.lat;
+let longitude = response.data.city.coord.lon;
 let apiKey = "efa461f8eba76234d37349aa6790ea03"
 let apiDailyUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayForecast);
+axios.get(apiDailyUrl).then(displayForecast);
 }
 
 function search(city) {
