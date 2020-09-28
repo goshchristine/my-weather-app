@@ -20,8 +20,8 @@ body {
   padding: 0;
   padding-top: 5px;
   box-shadow: 1px 1px 1px transparent;
-  color:rgba(206, 35, 64, 0.61);
-  max-width: 475px;
+  color: rgba(206, 35, 64, 0.61);
+  max-width: 450px;
 }
 
 .row-first {
@@ -31,19 +31,19 @@ body {
   top: 7px;
 }
 
-#go {
-  position: relative;
-  left: 5px;
-  top: 12px;
-}
-
 input {
   border: none;
   border-radius: 5px;
   border: 2px outset #fff;
   color: rgb(206, 35, 63);
   position: relative;
-  left: 80px;
+  left: 60px;
+}
+
+#go {
+  position: relative;
+  left: 0px;
+  top: 12px;
 }
 
 .btn-sm {
@@ -85,7 +85,7 @@ h1 {
   font-weight: 900;
   text-transform: capitalize;
   position: relative;
-  top: 10px;
+  top: 15px;
 }
 
 #left {
@@ -178,7 +178,8 @@ img {
   right: 6px;
 }
 
-.times, .temps {
+.times,
+.temps {
   font-size: 17px;
   margin: 0 auto;
   padding: 0;
@@ -190,7 +191,7 @@ a {
 }
 
 a:hover {
-  color: rgb(206, 35, 63);;
+  color: rgb(206, 35, 63);
   text-decoration-line: none;
 }
 
@@ -199,7 +200,7 @@ a:visited {
 }
 
 .active {
-  color:black;
+  color: black;
   cursor: default;
 }
 
