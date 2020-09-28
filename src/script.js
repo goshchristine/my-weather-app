@@ -61,7 +61,7 @@ function formatDate(timestamp) {
      cityElement.innerHTML = response.data.name;
      iconElement.setAttribute(
        "src",
-       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+       `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
      );
      iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
      descriptionElement.innerHTML = response.data.weather[0].description;
@@ -91,7 +91,7 @@ function formatDate(timestamp) {
                <p class="times"><strong>${formatDay(
                  forecast.dt * 1000
                )}</strong></p>
-               <img src="http://openweathermap.org/img/wn/${
+               <img src="https://openweathermap.org/img/wn/${
                  forecast.weather[0].icon
                }@2x.png" />
                <p class="temps"><strong>${Math.round(forecast.temp.max)}°</strong><br /> ${Math.round(forecast.temp.min)}°</p></p>
