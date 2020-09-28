@@ -85,7 +85,6 @@ function formatDate(timestamp) {
      let forecast = null;
      for (let index = 0; index < 5; index++) {
        forecast = response.data.daily[index];
-       console.log(forecast);
        forecastElement.innerHTML += ` 
                <div class="col-2">
                <p class="times"><strong>${formatDay(
