@@ -153,5 +153,5 @@ function formatDate(timestamp) {
    let celsiusLink = document.querySelector("#celsius");
    celsiusLink.addEventListener("click", displayCelsiusTemperature);
    
-   search("Cebu City");
+   search("Toronto");
    
