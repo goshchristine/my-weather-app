@@ -27,7 +27,7 @@ body {
 .row-first {
   display: flex;
   position: relative;
-  left: 115px;
+  left: 100px;
   top: 7px;
 }
 
@@ -42,7 +42,7 @@ input {
 
 #go {
   position: relative;
-  left: 0px;
+  left: 22px;
   top: 12px;
 }
 
