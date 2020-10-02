@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 
 function formatHours(timestamp) {
   let date = new Date(timestamp);
-
+ 
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -62,8 +62,7 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   sunriseElement.innerHTML = formatHours(response.data.sys.sunrise * 1000);
-  sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);
-}
+  sunsetElement.innerHTML = formatHours(response.data.sys.sunset * 1000);}
 
 function formatDay(timestamp) {
   let now = new Date(timestamp);
