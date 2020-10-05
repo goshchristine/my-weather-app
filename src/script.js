@@ -45,7 +45,6 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("h3");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let precipitationElement = document.querySelector("#precipitation");
 
   celsiusTemperature = Math.round(response.data.main.temp);
 
@@ -60,8 +59,7 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  precipitationElement.innerHTML = (response.data.rain["1h"] * 100);
-console.log(precipitationElement.innerHTML);}
+console.log(response);}
 
 function formatDay(timestamp) {
   let now = new Date(timestamp);
